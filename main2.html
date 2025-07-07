@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gangtok Travel Blog</title>
+  <style>
+    :root {
+      --primary: #2196f3;
+      --bg-image-light: url('https://images.unsplash.com/photo-1549887534-4d4a53be3d6b?auto=format&fit=crop&w=1920&q=80');
+      --bg-color-dark: #121212;
+      --text-dark: #222;
+      --text-light: #fff;
+      --card-bg-light: rgba(255, 255, 255, 0.92);
+      --card-bg-dark: #1e1e1e;
+    }
+
+    html[data-theme="light"] body {
+      background: var(--bg-image-light) no-repeat center center fixed;
+      background-size: cover;
+      color: var(--text-dark);
+    }
+
+    html[data-theme="dark"] body {
+      background-color: var(--bg-color-dark);
+      color: var(--text-light);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 20px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: var(--text-light);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    html[data-theme="light"] header {
+      color: var(--text-dark);
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+    }
+
+    .profile img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      margin-right: 12px;
+      border: 2px solid #fff;
+    }
+
+    .theme-toggle {
+      font-size: 22px;
+      background: none;
+      border: none;
+      color: inherit;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .theme-toggle:hover {
+      transform: rotate(20deg);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 100px auto 30px; /* Push below fixed header */
+      padding: 20px;
+      border-radius: 10px;
+      backdrop-filter: blur(6px);
+      background: var(--card-bg-light);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: background 0.4s ease;
+    }
+
+    html[data-theme="dark"] .container {
+      background: var(--card-bg-dark);
+    }
+
+    h1, h2 {
+      transition: color 0.4s ease;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+    }
+
+    .place {
+      margin-bottom: 50px;
+    }
+
+    .image-gallery {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+
+    .image-gallery img {
+      width: 300px;
+      height: 180px;
+      border-radius: 8px;
+      object-fit: cover;
+      flex-shrink: 0;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .image-gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      background: var(--primary);
+      color: #fff;
+    }
+
+    @media (max-width: 600px) {
+      .image-gallery img {
+        width: 240px;
+        height: 150px;
+      }
+
+      header h2 {
+        font-size: 1rem;
+      }
+
+      .profile img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <header>
+        <div class="profile">
+          <img src="blog profile1.jpg" alt="Profile Picture" />
+          <h2>Shanya's Travel Blog</h2>
+        </div>
+        <div class="header-right">
+          <a href="https://www.instagram.com/shanyakanchan?igsh=MTVrN285OThzN25xMw==" class="instagram-link" target="_blank" title="Visit Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">🌙</button>
+        </div>
+      </header>
+  <div class="container">
+    <h1>Gangtok – The Jewel of Sikkim</h1>
+
+    <div class="place">
+      <h2>MG Road</h2>
+      <div class="image-gallery">
+        <img src="https://media.assettype.com/outlooktraveller/2023-11/32843667-d9c2-4163-bf9b-62e35c73845b/shutterstock_2180736305.jpg" alt="MG Road 1">
+        <img src="https://sikkimtourism.org/wp-content/uploads/2024/08/shoping-on-mg-road.jpg" alt="MG Road 2">
+        <img src="https://i.ytimg.com/vi/powaXZjgdW0/maxresdefault.jpg" alt="MG Road 3">
+        <img src="https://live.staticflickr.com/958/41184079205_eca8338f06.jpg" alt="MG Road 4">
+        <img src="https://allindiatourpackages.in/wp-content/uploads/2019/06/mg-road-gangtok.jpg" alt="MG Road 5">
+      </div>
+      <p>During our visit to Gangtok, we explored the vibrant and well-maintained MG Road. Despite the rain, the street was alive with colorful lights, lively shops, and the aroma of local street food. We enjoyed freshly steamed momos, which tasted perfect in the cool weather. The area was bustling with tourists and welcoming locals. It was a memorable experience that beautifully captured the charm of Gangtok.</p>
+    </div>
+
+    <div class="place">
+        <h2>Ban Jhakri Falls</h2>
+        <div class="image-gallery">
+          <img src="https://media.tripinvites.com/places/gangtok/banjhakri-falls/attractive-view-of-banjhakri-falls-450.webp" alt="Ban Jhakri 1">
+          <img src="https://media.tripinvites.com/places/gangtok/banjhakri-falls/famous-waterfall-in-gangtok-450.webp" alt="Ban Jhakri 2">
+          <img src="https://media.tripinvites.com/places/gangtok/banjhakri-falls/banjhakri-falls-450x300.webp" alt="Ban Jhakri 3">
+          <img src="https://gangtoktourism.in/images//tourist-places/ban-jhakri-waterfalls-and-park-gangtok/ban-jhakri-waterfalls-and-park-gangtok-photo-gallery-gangtok-tourism.jpg.jpg" alt="Ban Jhakri 4">
+          <img src="https://gangtoktourism.in/images//tourist-places/ban-jhakri-waterfalls-and-park-gangtok/ban-jhakri-waterfalls-and-park-gangtok-history-gangtok-tourism.jpg.jpg" alt="Ban Jhakri 5">
+        </div>
+        <p>We visited Ban Jhakri Falls, one of Gangtok’s most popular natural attractions. Surrounded by lush greenery and beautifully landscaped gardens, the waterfall was both powerful and serene. The sound of the rushing water, combined with the cool mist in the air, made the experience refreshing and peaceful. We enjoyed walking around the park, exploring the traditional statues and bridges that reflect the local culture. It was a calm and scenic escape from the city's hustle — a truly memorable part of our trip</p>
+    </div>
+
+      <div class="place">
+        <h2>View Point</h2>
+        <div class="image-gallery">
+          <img src="https://www.connectingtraveller.com/images/localtip/1633781534e6fb7efd4d177c06f049451bab993845.jpg" alt="View Point 1">
+          <img src="https://wallpaperaccess.com/full/9392438.jpg" alt="View Point 2">
+          <img src="https://www.bontravelindia.com/wp-content/uploads/2023/04/View-from-Tashi-View-Point-Gangtok-844x450.jpg" alt="View Point 3">
+          <img src="https://e0.pxfuel.com/wallpapers/549/751/desktop-wallpaper-india-gangtok-sikkim-nature-mountains-sky-clouds-building.jpg" alt="View Point 4">
+          <img src="https://sikkimyatra.in/wp-content/uploads/2023/11/Tashi_view_point_.jpg" alt="View Point 5">
+        </div>
+        <p>During our trip, we visited one of the scenic viewpoints in Gangtok, offering breathtaking panoramic views of the surrounding mountains and valleys. The air was crisp and cool, and the sight of the mist-covered hills was truly mesmerizing. We spent some quiet moments taking in the beauty and capturing photos of the stunning landscape. It was a peaceful and refreshing experience that made us feel deeply connected to nature.</p>
+    </div>
+  
+      <div class="place">
+        <h2>Monastery View</h2>
+        <div class="image-gallery">
+          <img src="https://media.tripinvites.com/places/gangtok/phodong-monastery/phodong-monastery-featured.jpg" alt="Monastery View 1">
+          <img src="https://www.luxurytrailsofindia.com/wp-content/uploads/2016/10/Ranka-Monastery-Gangtok-Sikkim.jpg" alt="Monastery View 2">
+          <img src="https://xplro.com/wp-content/uploads/2024/06/Rumtek_Monastery_-_Front_View-1024x683.jpg" alt="Monastery View 3">
+          <img src="https://www.trawell.in/admin/images/upload/322882392Gangtok_Do_Drul_Chorten_Stupa_Main.jpg" alt="Monastery View 4">
+          <img src="https://www.holidify.com/images/cmsuploads/compressed/1024px-Ranka_Monastery_-_Sikkim_-_Wikipedia_(42)_20180419170248.jpg" alt="Monastery View 5">
+        </div>
+        <p> The Monastery View in Gangtok, and the sight was truly serene and captivating. Surrounded by hills and prayer flags fluttering in the breeze, the monastery stood peacefully amidst nature. The calm atmosphere, along with the soft chanting in the background, created a sense of spiritual calm. We took some time to admire the intricate architecture and the panoramic view of the mountains. It was a peaceful and enriching experience that left a lasting impression.</p>
+    </div>
+  
+    <div class="place">
+        <h2>Rumtek Monastery</h2>
+        <div class="image-gallery">
+          <img src="https://hblimg.mmtcdn.com/content/hubble/img/gangtok/mmt/activities/m_Rumtek%20Monastery_5_l_399_598.jpg" alt="Rumtek 1">
+          <img src="https://live.staticflickr.com/65535/47998948868_61485da978_b.jpg" alt="Rumtek 2">
+          <img src="https://live.staticflickr.com/3221/2517911723_02d2e94b31_b.jpg" alt="Rumtek 3">
+          <img src="https://www.elginhotels.com/wp-content/uploads/2020/03/rumtek-monastery-03.jpg.webp" alt="Rumtek 4">
+          <img src="https://i.pinimg.com/originals/f1/f8/0d/f1f80da858a7d17aa85b0e9d77f8e9f7.jpg" alt="Rumtek 5">
+        </div>
+        <p>Visiting Rumtek Monastery was one of the most peaceful and enriching experiences of our trip to Gangtok. Nestled in the hills, the monastery's grand structure and intricate Tibetan architecture were truly captivating. The atmosphere was calm and spiritual, with monks engaged in prayer and chants echoing softly through the halls. We spent time exploring the beautifully decorated interiors and admiring the scenic views surrounding the monastery. The visit offered a deep sense of tranquility and connection to Sikkim’s rich Buddhist heritage.</p>
+    </div>
+  
+    <div class="place">
+        <h2>Tashi View Point</h2>
+        <div class="image-gallery">
+          <img src="https://media1.thrillophilia.com/filestore/7jl12i12affaze561s74q7pf7a8q_1586589815_ganeshtok-cover_20180307152145.png" alt="Tashi View 1">
+          <img src="https://www.sikkimtourismindia.com/blog/wp-content/uploads/2021/11/SevenSistersWaterfalls.jpg" alt="Tashi View 2">
+          <img src="https://www.nexplore.org/blog/wp-content/uploads/2022/05/tashi_viewpoint-1024x683.jpg" alt="Tashi View 3">
+          <img src="https://static.clubmahindra.com/storage/app/media/Lavintuna/Tashi%20Viewpoint.jpg?width=600" alt="Tashi View 4">
+          <img src="https://media1.thrillophilia.com/filestore/2p7y1cfsvqj8tw4wx8duoelu8va5_shutterstock_661867516.jpg" alt="Tashi View 5">
+        </div>
+        <p>Tashi View Point was a truly breathtaking experience. From the top, we enjoyed panoramic views of the snow-capped Himalayan peaks, with Mt. Kanchenjunga shining in the distance. The cool mountain breeze and peaceful atmosphere made it an ideal place to pause and take in the beauty. We also stopped by a small local tea stall nearby, where we sipped hot, refreshing tea while enjoying the views — a simple yet unforgettable moment. The combination of scenic beauty and warm hospitality made this visit truly special.</p>
+      </div>
+    </div>
+
+
+
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Shanya's Travel Blog. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const root = document.documentElement;
+      const current = root.getAttribute('data-theme');
+      const newTheme = current === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', newTheme);
+
+      // Toggle icon
+      const btn = document.querySelector('.theme-toggle');
+      btn.textContent = newTheme === 'dark' ? '🌞' : '🌙';
+    }
+  </script>
+</body>
+</html>
